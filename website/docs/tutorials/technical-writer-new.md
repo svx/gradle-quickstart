@@ -224,19 +224,6 @@ Should that be called the second part?
 Should I add the file customization to the beginning?
 :::
 
-### Building the Second Application
-
-(Maybe rename this project and use a better name)
-
-(maybe use better headings here)
-
-In your terminal, change into the second project and run the following command to build the project:
-
-```shell
-cd technical-writer-project
-./gradlew build
-```
-
 ## Tasks
 
 In your terminal:
