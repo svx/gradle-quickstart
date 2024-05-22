@@ -3,6 +3,9 @@ description: Tutorial/Guide outline.
 id: technical-writer-new
 sidebar_position: 3
 sidebar_label: Technical Writer
+tags:
+  - Tutorial
+  - Intermediate
 ---
 
 :::info
@@ -19,11 +22,7 @@ Add command and output tabs to be consistent
 
 This tutorial will guide you through setting up a  "Technical Writer" Java application using Gradle.
 
-You will learn how to use Grade Plugins.
-
-You will create a custom task using a Gradle Plugin which creates two text files (a.txt and b.txt) in the build directory (app/build).
-
-The content of these files will be "Hi from Gradle"
+You will learn how to create and use custom tasks using a Gradle Plugin to create test files in the build directory (`app/build`) of the application.
 
 :::warning
 Enhance above.

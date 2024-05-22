@@ -3,21 +3,32 @@ description: Tutorial/Guide outline.
 id: getting-started
 sidebar_position: 1
 sidebar_label: Getting started
+sidebar_class_name: green
+tags:
+  - Tutorial
+  - Beginner
 ---
 
 import ContentRef from '@site/src/components/ContentRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 # Getting started
 
 This tutorial will guide you through setting up a  "Hello World" Java application using Gradle.
 
+In this tutorial, you will:
+
+- Clone an example project from GitHub.
+- Initialize a new Gradle project.
+- Build the project.
+- Learn about Gradle’s project structure.
+- Explore Gradle files and build scripts.
+
 :::warning
 Add a bit more info.
 
-Add links to the official tutorials
+Adjust above
 :::
 
 :::info
@@ -244,3 +255,5 @@ Add info where the use can find the whole application and how to share it.
 Adjust below
 
 Congratulations! You've successfully created a  "Hello World" application using Gradle.
+You will learn the basics about the project root directory setup, build and settings files.
+
