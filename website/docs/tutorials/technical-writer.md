@@ -1,10 +1,10 @@
 ---
 description: Tutorial/Guide outline.
-id: tutorial
-sidebar_position: 2
+id: technical-writer
+sidebar_position: 3
 ---
 
-# Hello World Tutorial
+# Technical Writer
 
 Add a note that this tutorial/guide is written for macOS.
 

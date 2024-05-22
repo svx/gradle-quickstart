@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Hello World',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -71,7 +71,7 @@ const config = {
         title: 'Hello World',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/ocld-logo.png',
         },
         items: [
           //{
@@ -83,8 +83,10 @@ const config = {
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            //label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            "aria-label": "GitHub repository",
           },
         ],
       },
