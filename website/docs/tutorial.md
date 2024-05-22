@@ -1,12 +1,13 @@
 ---
 description: Tutorial/Guide outline.
 id: tutorial
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Hello World Tutorial
 
-Gradle is a powerful build automation tool used primarily for Java projects, though it can handle builds of various other languages and platforms.
+Add a note that this tutorial/guide is written for macOS.
+
 This tutorial will guide you through setting up a  "Hello World" Java application using Gradle.
 
 This guide consists of two projects, one base `hello world` and a second project using Gradle task and plugins.
@@ -89,9 +90,20 @@ Explain and link to the *init* docs to add more info.
 
 ## Gradle Wrapper
 
+The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project, ensuring consistency and reliability across different environments and team members.
+This means that anyone cloning the repository can build the project without needing to have Gradle pre-installed, as the Wrapper will download and use the correct Gradle version automatically.
+
+Key Benefits of the Gradle Wrapper
+
+- Consistency: Ensures that the project uses the same Gradle version across all environments.
+- Ease of Use: No need to install Gradle manually. The Wrapper handles downloading and setting up the specified version.
+- Portability: Simplifies CI/CD pipelines and onboarding new developers, as they only need to have Java installed.
+
+Add a link to the docs for more info.
+
 ## Step 4: Building and Running the First Project
 
-In your terminal, change into the first project and run the following command to build the project:
+In your terminal, change into the first project and run the following command to build the project by using the Gradle Wrapper included into this project.
 
 ```shell
 cd hello-world-project
