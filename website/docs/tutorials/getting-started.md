@@ -9,9 +9,6 @@ import ContentRef from '@site/src/components/ContentRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info
-In this tutorial, all examples are macOS based.
-:::
 
 # Getting started
 
@@ -23,21 +20,25 @@ Add a bit more info.
 Add links to the official tutorials
 :::
 
+:::info
+In this tutorial, all examples are macOS based.
+:::
+
 ## Prerequisites
 
 - [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") installed (version 8 or later).
-- Gradle [installed on your system](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs").
+- [Gradle](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs") installed on your system.
 - [Git](https://git-scm.com/ "Link to the website of Git")
 
 ## Preparing the Project
 
-Open your terminal or command prompt and clone the GitHub repository:
+1. Open your terminal or command prompt and clone the GitHub repository.
 
 ```shell title="CLI"
 git clone https://github.com/svx/gradle-hello-world.git
 ```
 
-Change into the *hello-world-project*:
+2. Navigate to the `hello-world-project` directory.
 
 ```shell title="CLI"
 cd hello-world-project
@@ -67,20 +68,6 @@ cd hello-world-project
 - **gradlew:** A shell script for Unix-based systems to run the Wrapper.
 - **gradlew.bat:** A batch script for Windows to run the Wrapper.
 - **settings.gradle.kts:** Contains project settings, like the project name.
-
-## Initializing the Project
-
-:::warning
-Add tab with output
-:::
-
-Use the `gradle init` command to generate a new Gradle project using the Gradle Kotlin DSL (Domain Specific Language) a Kotlin-based language:
-
-```shell title="CLI"
-gradle init --type java-application  --dsl kotlin
-```
-
-<ContentRef url="https://docs.gradle.org/current/userguide/build_init_plugin.html">Learn more about the Build Init Plugin</ContentRef>
 
 ## Understanding the Project Files
 
@@ -141,9 +128,23 @@ tasks.named<Test>("test") {
 }
 ```
 
+## Initializing the Project
+
+:::warning
+Add tab with output
+:::
+
+Use `gradle init` to generate a new Gradle project using the [Gradle Kotlin DSL](https://docs.gradle.org/current/dsl/ "Link to the Gradle Build Language Reference") (Domain Specific Language) a Kotlin-based language:
+
+```shell title="CLI"
+gradle init --type java-application --dsl kotlin
+```
+
+<ContentRef url="https://docs.gradle.org/current/userguide/build_init_plugin.html">Learn more about the Build Init Plugin</ContentRef>
+
 ## Building the Project
 
-Run the following command to build the project by using the [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
+Use the `./gradlew build` command to build the project using [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
 <Tabs>
 <TabItem value="Command">

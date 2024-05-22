@@ -68,7 +68,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Gradle Tutorials',
+        title: 'Gradle Playground',
         logo: {
           alt: 'OCLD Logo',
           src: 'img/ocld-logo.png',
@@ -97,43 +97,47 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'User Manual',
+                href: 'https://docs.gradle.org/current/userguide/userguide.html',
+              },
+              {
+                label: 'DSL Reference',
+                href: 'https://docs.gradle.org/current/dsl/',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Get Help',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Forums',
+                href: 'https://discuss.gradle.org/c/help-discuss',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/gradle/',
+              },
+              {
+                label: 'Training',
+                href: 'https://gradle.org/training/',
+              },
+            ],
+          },
+          {
+            title: 'News',
+            items: [
+              {
+                label: 'Blog',
+                href: 'https://blog.gradle.org/',
+              },
+              {
+                label: 'Newsletter',
+                href: 'https://newsletter.gradle.org/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -23,7 +23,7 @@ You will learn how to use Grade Plugins.
 
 You will create a custom task using a Gradle Plugin which creates two text files (a.txt and b.txt) in the build directory (app/build).
 
-The content of these files wil be "Hi from Gradle"
+The content of these files will be "Hi from Gradle"
 
 :::warning
 Enhance above.

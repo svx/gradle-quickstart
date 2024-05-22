@@ -69,9 +69,9 @@ See the following example:
 
 ### Running a Task
 
-To run a task, invoke `./gradlew <taskName>` from the command line.
+Use `./gradlew <taskName>` to run a task from the command line.
 
-The following example runs a task named *hello*.
+The following example runs a task named `hello`.
 
 <Tabs>
 <TabItem value="Command">
