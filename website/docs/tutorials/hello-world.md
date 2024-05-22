@@ -2,6 +2,7 @@
 description: Tutorial/Guide outline.
 id: hello-world
 sidebar_position: 2
+sidebar_label: Hello World Old
 ---
 
 # Hello World

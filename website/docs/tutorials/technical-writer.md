@@ -2,7 +2,12 @@
 description: Tutorial/Guide outline.
 id: technical-writer
 sidebar_position: 3
+sidebar_label: Technical Writer
 ---
+
+:::info
+In this tutorial, all examples are macOS based.
+:::
 
 # Technical Writer
 

@@ -69,9 +69,20 @@ See the following example:
 
 To run a task, invoke `./gradlew <taskName>` from the command line.
 
-The following example runs a task called *hello*.
+The following example runs a task named *hello*.
+
+```shell
+ ./gradlew hello
+
+BUILD SUCCESSFUL in 675ms
+1 actionable task: 1 up-to-date
+```
 
 ![Hello Task Example](/img/gradle-hello-task.png)
+
+:::warning
+What is better UI/DX the code example or the picture?
+:::
 
 ## Gradle Plugins
 
