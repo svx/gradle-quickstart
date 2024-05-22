@@ -21,14 +21,14 @@ Maybe just cover them as one and just link to files, but I fear that adding the 
 
 (Add link to official installation docs)
 
-## Step 1: Setting Up the Project
+## Step 1: Setting up the Project
 
-### 1. Prepare the project
+### Prepare the Project
 
 Open your terminal or command prompt and clone the GitHub repository:
 
 ```shell
-git clone https://HERE THE URL
+git clone https://github.com/svx/gradle-hello-world.git
 ```
 
 ## Step 2: Understanding the Project Structure
@@ -87,9 +87,9 @@ gradle init --type java-application  --dsl kotlin
 
 Explain and link to the *init* docs to add more info.
 
-## Explain Gradle wrapper
+## Gradle Wrapper
 
-## Step 4: Building and Running the first Project
+## Step 4: Building and Running the First Project
 
 In your terminal, change into the first project and run the following command to build the project:
 
@@ -102,7 +102,7 @@ Explain that "build: is a task, explain that below and add a link to below
 
 Add output example, maybe in a tab.
 
-### 2.Run the Application
+### 2. Run the Application
 
 To run the application, use the following command:
 
@@ -121,11 +121,11 @@ Congratulations you build and run your first application
 
 Add info where the use can find the whole application and how to share it.
 
-## Customizing the build.gradle File
+## Customizing the Build File
 
 In the second part of this guide/tutorial, you will learn about Gradle tasks and plugins.
 
-## What are Gradle tasks
+## Gradle Tasks
 
 (Add link to docs for more info)
 
@@ -142,7 +142,7 @@ Key Concepts of Gradle Tasks
 - Task Dependencies:
     Tasks can depend on other tasks, ensuring that dependent tasks are executed in the correct order. This is useful for tasks that need to perform preliminary steps before the main action.
 
-## What are Gradle extensions
+## Gradle Extensions
 
 (Add link to docs for more info)
 
@@ -176,7 +176,7 @@ Check below to make sure that is valid!
 - dependencies: Specifies the dependencies needed for the project (JUnit for testing here).
 - application: Configures the main class for the application.
 
-### Building the second application
+### Building the Second Application
 
 (Maybe rename this project and use a better name)
 
@@ -189,7 +189,7 @@ cd technical-writer-project
 ./gradlew build
 ```
 
-### Task overview
+### Task Overview
 
 In your terminal:
 
@@ -201,7 +201,7 @@ This will show a list of all possible tasks, as mentioned in the first part, `bu
 
 Add SCREEN
 
-### Running a task
+### Running a Task
 
 In your terminal:
 
