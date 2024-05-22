@@ -68,9 +68,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Hello World',
+        title: 'Gradle Tutorials',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'OCLD Logo',
           src: 'img/ocld-logo.png',
         },
         items: [

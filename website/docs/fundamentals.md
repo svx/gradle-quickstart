@@ -5,6 +5,8 @@ sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Fundamentals
 
@@ -17,13 +19,13 @@ Add an intro
 The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project, ensuring consistency and reliability across different environments and team members.<br />
 This means that anyone cloning the repository can build the project without needing to have Gradle pre-installed, as the Wrapper will download and use the correct Gradle version automatically.
 
-Key Benefits of the Gradle Wrapper
+<h3>Key Benefits of the Gradle Wrapper</h3>
 
 - **Consistency:** Ensures that the project uses the same Gradle version across all environments.
-- **Ease of Use:** No need to install Gradle manually. The Wrapper handles downloading and setting up the specified version.
-- **Portability:** Simplifies CI/CD pipelines and onboarding new developers, as they only need to have Java installed.
 
-Structure of the Gradle Wrapper
+- **Ease of Use:** No need to install Gradle manually. The Wrapper handles downloading and setting up the specified version.
+
+- **Portability:** Simplifies CI/CD pipelines and onboarding new developers, as they only need to have Java installed.
 
 When you generate the Gradle Wrapper, several files are added to your project:
 
@@ -71,12 +73,24 @@ To run a task, invoke `./gradlew <taskName>` from the command line.
 
 The following example runs a task named *hello*.
 
-```shell
- ./gradlew hello
+<Tabs>
+<TabItem value="Command">
 
+```shell title="CLI"
+ ./gradlew hello
+ ```
+
+</TabItem>
+
+<TabItem value="Output">
+
+```shell
 BUILD SUCCESSFUL in 675ms
 1 actionable task: 1 up-to-date
 ```
+
+</TabItem>
+</Tabs>
 
 ![Hello Task Example](/img/gradle-hello-task.png)
 

@@ -11,6 +11,8 @@ In this tutorial, all examples are macOS based.
 
 :::warning
 Update build file
+
+Add command and output tabs to be consistent
 ::::
 
 # Technical Writer
@@ -86,7 +88,29 @@ gradle init --type java-application  --dsl kotlin
 
 Explain and link to the *init* docs to add more info.
 
-## Understanding the Build File
+:::warning
+You for above the content from getting-started
+:::
+
+## Understanding the Project Files
+
+:::warning
+Explain the files below.
+:::
+
+### Settings file
+
+```kotlin showLineNumbers title="settings.gradle.kts"
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+
+rootProject.name = "technical-writer-project"
+include("app")
+```
+
+### Build File
 
 ```kotlin showLineNumbers title="build.gradle.kts"
 // Apply the custom Plugin which is defined in the class GreetingPlugin below.
@@ -191,8 +215,6 @@ open class Greeting : DefaultTask() {
 }
 ```
 
-### Breaking it down
-
 ## Building the Project
 
 In your terminal, change into the first project and run the following command to build the project by using the Gradle Wrapper included into this project.
@@ -272,7 +294,7 @@ In your terminal:
 This will run the **hello** task, it will create two files (Check that and add screen which contain "Hello Word".
 
 ```shell title="CLI"
- ls app/build
+ls app/build
 a.txt
 b.txt
 ```

@@ -19,6 +19,8 @@ This tutorial will guide you through setting up a  "Hello World" Java applicatio
 
 :::warning
 Add a bit more info.
+
+Add links to the official tutorials
 :::
 
 ## Prerequisites
@@ -67,6 +69,10 @@ cd hello-world-project
 - **settings.gradle.kts:** Contains project settings, like the project name.
 
 ## Initializing the Project
+
+:::warning
+Add tab with output
+:::
 
 Use the `gradle init` command to generate a new Gradle project using the Gradle Kotlin DSL (Domain Specific Language) a Kotlin-based language:
 
@@ -139,9 +145,23 @@ tasks.named<Test>("test") {
 
 Run the following command to build the project by using the [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
+<Tabs>
+<TabItem value="Command">
+
 ```shell title="CLI"
 ./gradlew build
 ```
+
+</TabItem>
+<TabItem value="Output">
+
+```shell title="Result"
+BUILD SUCCESSFUL in 372ms
+7 actionable tasks: 7 up-to-date
+```
+
+</TabItem>
+</Tabs>
 
 <details>
 <summary>Here a better name</summary>
