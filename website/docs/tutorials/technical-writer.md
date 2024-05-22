@@ -2,7 +2,7 @@
 description: Tutorial/Guide outline.
 id: technical-writer
 sidebar_position: 3
-sidebar_label: Technical Writer
+sidebar_label: Technical Writer Old
 ---
 
 :::info

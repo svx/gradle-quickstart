@@ -185,7 +185,6 @@ tasks.named<Test>("test") {
 </p>
 </details>
 
-
 ## Running the Application
 
 To run the application, use the following command:
