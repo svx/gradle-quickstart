@@ -79,10 +79,20 @@ gradle init --type java-application  --dsl kotlin
 ## Understanding the Project Files
 
 :::warning
-Should I add and explain, or is linking to the official ones enough?
-
-Or, add info that the user should consult the official docs since the project is just a quick-start.
+Explain the files below.
 :::
+
+### Settings file
+
+```kotlin showLineNumbers title="settings.gradle.kts"
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+
+rootProject.name = "technical-writer-project"
+include("app")
+```
 
 ### Build File
 
@@ -133,12 +143,6 @@ Run the following command to build the project by using the [Gradle Wrapper](../
 ./gradlew build
 ```
 
-:::warning
-Explain that "build: is a task, explain that below and add a link to below
-
-Add output example, maybe in a tab.
-:::
-
 <details>
 <summary>Here a better name</summary>
 <p>
@@ -188,37 +192,6 @@ tasks.named<Test>("test") {
 ## Running the Application
 
 To run the application, use the following command:
-
-```shell title="CLI"
-./gradlew run
-```
-
-You should see the output:
-
-```shell title="CLI"
-> Task :run
-Hello, World!
-```
-
----
-
-:::warning
-Or just in one block?
-:::
-
-```shell title="CLI"
- ./gradlew run
-
-> Task :app:run
-Hello World!
-
-BUILD SUCCESSFUL in 373ms
-2 actionable tasks: 1 executed, 1 up-to-date
-```
-
----
-
-Or:
 
 <Tabs>
 <TabItem value="Command">

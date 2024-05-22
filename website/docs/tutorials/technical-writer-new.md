@@ -9,6 +9,10 @@ sidebar_label: Technical Writer
 In this tutorial, all examples are macOS based.
 :::
 
+:::warning
+Update build file
+::::
+
 # Technical Writer
 
 This tutorial will guide you through setting up a  "Technical Writer" Java application using Gradle.
@@ -85,8 +89,10 @@ Explain and link to the *init* docs to add more info.
 ## Understanding the Build File
 
 ```kotlin showLineNumbers title="build.gradle.kts"
+// Apply the custom Plugin which is defined in the class GreetingPlugin below.
 apply<GreetingPlugin>()
 
+// function to create the files a.txt and b.txt in the build directory.
 fun buildFile(path: String) = layout.buildDirectory.file(path)
 
 plugins {
@@ -126,6 +132,7 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
+// Create the files a.txt and b.txt containing the message "Hi from Gradle" in the build directory.
 configure<GreetingPluginExtension> {
 
     message.set("Hi from Gradle")
@@ -134,6 +141,7 @@ configure<GreetingPluginExtension> {
         buildFile("b.txt"))
 }
 
+// Custom Plugin
 class GreetingPlugin : Plugin<Project> {
 
     override fun apply(project: Project): Unit = project.run {
@@ -148,6 +156,7 @@ class GreetingPlugin : Plugin<Project> {
         tasks {
             register("hello", Greeting::class) {
                 group = "Greeting"
+                description = "Generates greeting files."
                 message.set(greeting.message)
                 outputFiles.setFrom(greeting.outputFiles)
             }
@@ -155,6 +164,7 @@ class GreetingPlugin : Plugin<Project> {
     }
 }
 
+// Open for extension
 open class GreetingPluginExtension(project: Project) {
 
     val message = project.objects.property<String>()
@@ -162,6 +172,7 @@ open class GreetingPluginExtension(project: Project) {
     val outputFiles: ConfigurableFileCollection = project.files()
 }
 
+// Run the task and create the files *a.txt and b.txt)
 open class Greeting : DefaultTask() {
 
     @get:Input
@@ -241,6 +252,10 @@ Add a link to the fundamentals page part about tasks
 This will show a list of all possible tasks, as mentioned in the first part, `build` is a task.
 
 ![Task Overview Example](/img/gradle-tasks-example.png)
+
+:::warning
+Update screen
+:::
 
 ### Running the hello Task
 

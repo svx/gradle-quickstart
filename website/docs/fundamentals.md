@@ -81,6 +81,10 @@ BUILD SUCCESSFUL in 675ms
 ![Hello Task Example](/img/gradle-hello-task.png)
 
 :::warning
+Update screen
+:::
+
+:::warning
 What is better UI/DX the code example or the picture?
 :::
 

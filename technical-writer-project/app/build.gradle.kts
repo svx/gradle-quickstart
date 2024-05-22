@@ -61,6 +61,7 @@ class GreetingPlugin : Plugin<Project> {
         tasks {
             register("hello", Greeting::class) {
                 group = "Greeting"
+                description = "Generates greeting files."
                 message.set(greeting.message)
                 outputFiles.setFrom(greeting.outputFiles)
             }
