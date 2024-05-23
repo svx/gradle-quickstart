@@ -37,6 +37,8 @@ In this tutorial, all examples are macOS based.
 
 ## Prerequisites
 
+Add aline that the user should check fundamentals to / if not used to Gradle basics.
+
 - [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") installed (version 8 or later).
 - [Gradle](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs") installed on your system.
 - [Git](https://git-scm.com/ "Link to the website of Git")

@@ -12,10 +12,6 @@ import ContentRef from '@site/src/components/ContentRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info
-In this tutorial, all examples are macOS based.
-:::
-
 :::warning
 Update build file
 
@@ -23,6 +19,14 @@ Add command and output tabs to be consistent
 ::::
 
 # Technical Writer
+
+In this tutorial, you will:
+
+- Clone an example project from GitHub.
+- Initialize a new Gradle project.
+- Build the project.
+- Learn about Gradle’s project structure.
+- Explore Gradle files and build scripts.
 
 This tutorial will guide you through setting up a  "Technical Writer" Java application using Gradle.
 
@@ -33,10 +37,18 @@ You will learn how to create and use custom tasks using a Gradle Plugin to creat
 :::warning
 Enhance above.
 
-Fix the Plugin the output needs to be improved, this is not even a sentence.
+Add line tat that this is for imidate audience if you are new check the hello world first.
+
+:::
+
+:::info
+In this tutorial, all examples are macOS based.
 :::
 
 ## Prerequisites
+
+Add aline that the user should check fundamentals to / if not used to Gradle basics.
+
 
 - [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") installed (version 8 or later).
 - Gradle [installed on your system](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs").
@@ -80,22 +92,6 @@ cd technical-writer-project
 - **gradlew:** A shell script for Unix-based systems to run the Wrapper.
 - **gradlew.bat:** A batch script for Windows to run the Wrapper.
 - **settings.gradle.kts:** Contains project settings, like the project name.
-
-## Initializing the Project
-
-Check if that is needed per project
-
-Use the `gradle init` command to generate a new Gradle project:
-
-```shell
-gradle init --type java-application  --dsl kotlin
-```
-
-Explain and link to the *init* docs to add more info.
-
-:::warning
-You for above the content from getting-started
-:::
 
 ## Understanding the Project Files
 
@@ -475,6 +471,20 @@ Defines a custom task class named `Greeting`.
 
 </p>
 </details>
+
+## Initializing the Project
+
+:::warning
+Add tab with output
+:::
+
+Use `gradle init` to generate a new Gradle project using the [Gradle Kotlin DSL](https://docs.gradle.org/current/dsl/ "Link to the Gradle Build Language Reference") (Domain Specific Language) a Kotlin-based language:
+
+```shell title="CLI"
+gradle init --type java-application --dsl kotlin
+```
+
+<ContentRef url="https://docs.gradle.org/current/userguide/build_init_plugin.html">Learn more about the Build Init Plugin</ContentRef>
 
 ## Building the Project
 
