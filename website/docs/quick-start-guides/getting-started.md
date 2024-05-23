@@ -15,33 +15,27 @@ import TabItem from '@theme/TabItem';
 
 # Getting started
 
-This tutorial will guide you through setting up a  "Hello World" Java application using Gradle.
+This guide will walk you through setting up a  "Hello World" Java application using Gradle.
 
-In this tutorial, you will:
+You will:
 
 - Clone an example project from GitHub.
-- Initialize a new Gradle project.
-- Build the project.
-- Learn about Gradle’s project structure.
-- Explore Gradle files and build scripts.
-
-:::warning
-Add a bit more info.
-
-Adjust above
-:::
+- Learn about Gradle’s project and file structure.
+- Initialize the example Gradle project.
+- Build and run the project.
 
 :::info
 In this tutorial, all examples are macOS based.
 :::
 
-## Prerequisites
+## Before you Begin
 
-Add aline that the user should check fundamentals to / if not used to Gradle basics.
+Make sure you meet the following prerequisites:
 
-- [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") installed (version 8 or later).
-- [Gradle](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs") installed on your system.
-- [Git](https://git-scm.com/ "Link to the website of Git")
+- You read the [Gradle Fundamentals](../fundamentals.md "Link to Fundamentals page") page.
+- [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") is installed (version 8 or later).
+- [Gradle](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs") is installed on your system.
+- [Git](https://git-scm.com/ "Link to the website of Git") is installed.
 
 ## Preparing the Project
 
@@ -114,9 +108,9 @@ plugins {
 
 The `plugins` block in the settings file is used to apply plugins that are necessary for configuring the build environment before any project-specific configurations are applied.
 
-- **foojay-resolver Plugin:** The org.gradle.toolchains.foojay-resolver-convention plugin is used to facilitate the automatic download and management of JDKs through Foojay (a community-driven Java version manager).
+- **foojay-resolver Plugin:** The `org.gradle.toolchains.foojay-resolver-convention` plugin is used to facilitate the automatic download and management of JDKs through [Foojay](https://github.com/gradle/foojay-toolchains "Link to the GitHub repository of the Plugin") (a community-driven Java version manager).
 This plugin ensures that the appropriate JDK version is available for the build, streamlining the setup process.
-- **Version:** The version `0.7.0` specifies the exact version of the foojay-resolver plugin to use.
+- **Version:** The version `0.7.0` specifies the exact version of the `foojay-resolver` plugin to use.
 
 #### 2. Root Project Name
 
@@ -349,10 +343,6 @@ BUILD SUCCESSFUL in 373ms
 
 </TabItem>
 </Tabs>
-
-:::warning
-Add info where the use can find the whole application and how to share it.
-:::
 
 ## Conclusion
 
