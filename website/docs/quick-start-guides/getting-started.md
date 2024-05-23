@@ -231,7 +231,7 @@ The `dependencies` block defines the external libraries that the project depends
 - **JUnit Jupiter:** The `testImplementation(libs.junit.jupiter)` line adds JUnit Jupiter (the new version of JUnit) as a dependency for writing and running tests.
 `libs` is a reference to a version catalog, which centralizes dependency versions.
 - **JUnit Platform Launcher:** The `testRuntimeOnly("org.junit.platform:junit-platform-launcher")` line adds the JUnit Platform Launcher as a runtime dependency for running tests.
-- **Guava:** The `implementation(libs.guava)` line adds Google Guava as a dependency used by the application.
+- **Guava:** The `implementation(libs.guava)` line adds [Google Guava](https://github.com/google/guava "Link to the GitHub repository of Guava") as a dependency used by the application.
 `implementation` means this dependency is required at both compile and runtime.
 
 #### 4. Java Toolchain Block
