@@ -42,13 +42,13 @@ Make sure you meet the following prerequisites:
 
 ## Preparing the Project
 
-Open your terminal or command prompt and clone the GitHub repository.
+1. Open your terminal or command prompt and clone the GitHub repository.
 
 ```shell
 git clone https://github.com/svx/gradle-hello-world.git
 ```
 
-Change into the `technical-writer-project` inside the cloned repository.
+2. Change into the `technical-writer-project` inside the cloned repository.
 
 ```shell title="CLI"
 cd technical-writer-project

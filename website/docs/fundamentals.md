@@ -63,7 +63,7 @@ BUILD SUCCESSFUL in 500ms
 </TabItem>
 </Tabs>
 
-<ContentRef url="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Learn more about the Gradle Wrapper</ContentRef>
+<ContentRef url="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Read the official documentation about the Gradle Wrapper</ContentRef>
 
 ## Gradle Tasks
 
@@ -76,7 +76,7 @@ Each task has a name and a set of actions, which are blocks of code that execute
 
 <h3>Key Concepts of Gradle Tasks</h3>
 
-- **Definition:** Tasks can be defined in the *build.gradle* file. They can be basic or complex, depending on the actions they need to perform.
+- **Definition:** Tasks can be defined in the `build.gradle` file. They can be basic or complex, depending on the actions they need to perform.
 
 - **Execution:** You can run tasks from the command line using `./gradlew <taskName>`. Gradle determines the order of task execution based on their dependencies.
 
@@ -90,7 +90,7 @@ See the following example:
 
 ![Task Overview Example](/img/gradle-tasks-example.png)
 
-<ContentRef url="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Learn more about using Gradle Tasks</ContentRef>
+<ContentRef url="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Read the official documentation about Gradle Tasks</ContentRef>
 
 ### Running a Task
 
@@ -131,4 +131,4 @@ Gradle plugins can be applied to projects to handle various aspects of the build
 
 - **Custom Plugins:** These are developed by users to address specific needs of their projects.
 
-<ContentRef url="https://docs.gradle.org/current/userguide/custom_plugins.html">Learn more about using Gradle Plugins</ContentRef>
+<ContentRef url="https://docs.gradle.org/current/userguide/custom_plugins.html">Read the official documentation about Gradle Plugins</ContentRef>
