@@ -12,12 +12,6 @@ import ContentRef from '@site/src/components/ContentRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::warning
-Update build file
-
-Add command and output tabs to be consistent
-::::
-
 # Introduction
 
 This guide will walk you through setting up a  "Technical Writer" Java application using Gradle.
@@ -191,7 +185,7 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-// Create the files a.txt and b.txt containing the message "Hi from Gradle" in the build directory.
+// Create the files a.txt and b.txt containing the message "Hi from Gradle!" in the build directory.
 configure<GreetingPluginExtension> {
 
     message.set("Hi from Gradle")
@@ -200,7 +194,7 @@ configure<GreetingPluginExtension> {
         buildFile("b.txt"))
 }
 
-// Custom Plugin
+// Custom Plugin.
 class GreetingPlugin : Plugin<Project> {
 
     override fun apply(project: Project): Unit = project.run {
@@ -211,7 +205,7 @@ class GreetingPlugin : Plugin<Project> {
             GreetingPluginExtension::class,
             project)
 
-        // Add a task that uses the configuration
+        // Add a task that uses the configuration.
         tasks {
             register("hello", Greeting::class) {
                 group = "Greeting"
@@ -223,7 +217,7 @@ class GreetingPlugin : Plugin<Project> {
     }
 }
 
-// Open for extension
+// Open for extension.
 open class GreetingPluginExtension(project: Project) {
 
     val message = project.objects.property<String>()

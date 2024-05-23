@@ -39,6 +39,7 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
+// Create the files a.txt and b.txt containing the message "Hi from Gradle!" in the build directory.
 configure<GreetingPluginExtension> {
 
     message.set("Hi from Gradle!")
@@ -47,11 +48,12 @@ configure<GreetingPluginExtension> {
         buildFile("b.txt"))
 }
 
+// Custom Plugin.
 class GreetingPlugin : Plugin<Project> {
 
     override fun apply(project: Project): Unit = project.run {
 
-        // Add the 'greeting' extension object
+        // Add the 'greeting' extension object.
         val greeting = extensions.create(
             "greeting",
             GreetingPluginExtension::class,
@@ -69,16 +71,15 @@ class GreetingPlugin : Plugin<Project> {
     }
 }
 
+// Open for extension.
 open class GreetingPluginExtension(project: Project) {
 
-    // Test 1 adjust the line below as seen in:
-    // https://github.com/cbeust/kotlin-dsl/blob/master/samples/provider-properties/build.gradle.kts
-    //val message = "hiya"
     val message = project.objects.property<String>()
 
     val outputFiles: ConfigurableFileCollection = project.files()
 }
 
+// Define custom task and task action
 open class Greeting : DefaultTask() {
 
     @get:Input
