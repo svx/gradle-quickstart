@@ -2,10 +2,13 @@
     "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
         "foojay",
         "foojay-resolver",
+        "foojay-resolver-convention",
         "gradle-wrapper",
         "gradlew",
+        "greetingpluginextension",
         "init",
         "kts",
-        "toolchain"
+        "toolchain",
+        "toolchains"
     ]
 }

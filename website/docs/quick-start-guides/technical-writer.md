@@ -553,8 +553,14 @@ Use `pr` to check the content of both files at the same time.
 pr -m -t app/build/a.txt app/build/b.txt
 ```
 
+- **-m:** Merge the contents of multiple files.
+One line from each file specified by a file operand is written side by side into text columns of equal fixed widths
+
+- **-t:** Print neither the five-line identifying header nor the five-line trailer usually supplied for each page.
+Quit printing after the last line of each file without spacing to the end of the page.
+
 ```shell title="Output"
-Hi from Gradle!			    Hi from Gradle!
+Hi from Gradle!    Hi from Gradle!
 ```
 
 </TabItem>

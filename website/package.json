@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "docs:markdown": "./node_modules/.bin/markdownlint docs/**/*.md"
+    "docs:markdown": "./node_modules/.bin/markdownlint -c ../.markdownlint.json docs/**/*.md"
   },
   "dependencies": {
     "@docusaurus/core": "3.3.2",
