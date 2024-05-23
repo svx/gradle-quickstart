@@ -1,5 +1,5 @@
 ---
-description: Tutorial/Guide outline.
+description: "Gradle Fundamentals"
 id: fundamentals
 sidebar_position: 2
 ---
@@ -17,7 +17,7 @@ Understanding the key concepts, you'll be well-equipped to follow the guides and
 The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
 It defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
-## The Build File
+## Build File
 
 The Gradle build file, typically named `build.gradle` or `build.gradle.kts` for Kotlin DSL, defines how the project is built.
 It specifies plugins, dependencies, repositories, and custom tasks.
@@ -116,16 +116,6 @@ BUILD SUCCESSFUL in 675ms
 
 </TabItem>
 </Tabs>
-
-![Hello Task Example](/img/gradle-hello-task.png)
-
-:::warning
-Update screen
-:::
-
-:::warning
-What is better UI/DX the code example or the picture?
-:::
 
 ## Gradle Plugins
 

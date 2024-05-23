@@ -1,5 +1,5 @@
 ---
-description: Tutorial/Guide outline.
+description: "Setting up your Java application using Gradle."
 id: quick-getting-started
 sidebar_position: 1
 sidebar_label: Hello World
@@ -28,7 +28,7 @@ You will:
 In this tutorial, all examples are macOS based.
 :::
 
-## Before you Begin
+## Before You Begin
 
 Make sure you meet the following prerequisites:
 

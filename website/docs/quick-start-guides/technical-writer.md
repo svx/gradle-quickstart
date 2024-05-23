@@ -1,5 +1,5 @@
 ---
-description: Tutorial/Guide outline.
+description: "How to create custom tasks."
 id: quick-technical-writer-new
 sidebar_position: 2
 sidebar_label: Technical Writer
@@ -37,7 +37,7 @@ In this tutorial, you will:
 In this tutorial, all examples are macOS based.
 :::
 
-## Before you Begin
+## Before You Begin
 
 Make sure you meet the following prerequisites:
 
