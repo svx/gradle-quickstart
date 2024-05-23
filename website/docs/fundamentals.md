@@ -14,6 +14,20 @@ import TabItem from '@theme/TabItem';
 Add an intro
 :::
 
+## Settings file
+
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.
+It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
+
+## The Build File
+
+:::warning
+Make DSL a link
+:::
+
+The Gradle build file, typically named `build.gradle` or `build.gradle.kts` for Kotlin DSL, defines how the project is built.
+It specifies plugins, dependencies, repositories, and custom tasks.
+
 ## Gradle Wrapper
 
 The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project, ensuring consistency and reliability across different environments and team members.<br />

@@ -82,11 +82,10 @@ cd hello-world-project
 
 ## Understanding the Project Files
 
-:::warning
-Explain the files below.
-:::
-
 ### Settings file
+
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.<br />
+It defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ```kotlin showLineNumbers title="settings.gradle.kts"
 plugins {
@@ -146,6 +145,9 @@ This means there should be a directory named app under the root project director
 
 ### Build File
 
+The Gradle build file, typically named `build.gradle` or `build.gradle.kts` for Kotlin DSL, defines how the project is built.
+It specifies plugins, dependencies, repositories, and custom tasks.
+
 ```kotlin showLineNumbers title="build.gradle.kts"
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
@@ -184,6 +186,106 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 ```
+
+<details>
+<summary>Breakdown and Explanation</summary>
+<p>
+
+#### 1. Plugins Block
+
+```kotlin {1-4} showLineNumbers title="Plugins"
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    application
+}
+```
+
+The `plugins` block is used to apply plugins to the project.
+
+- **Application Plugin:** The `application` plugin adds tasks for building and running a Java command-line application.
+It simplifies packaging and running the application by providing a convenient way to define the main class and build the executable.
+
+#### 2. Repositories Block
+
+```kotlin {1-4} showLineNumbers title="Repository"
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+```
+
+The `repositories` block specifies where Gradle should look for dependencies.
+
+- **Maven Central:** The `mavenCentral()` method adds the Maven Central repository, which is a widely used repository for open-source libraries.
+
+#### 3. Dependencies Block
+
+```kotlin {1-9} showLineNumbers title="Dependencies"
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation(libs.junit.jupiter)
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // This dependency is used by the application.
+    implementation(libs.guava)
+}
+```
+
+The `dependencies` block defines the external libraries that the project depends on.
+
+- **JUnit Jupiter:** The `testImplementation(libs.junit.jupiter)` line adds JUnit Jupiter (the new version of JUnit) as a dependency for writing and running tests.
+`libs` is a reference to a version catalog, which centralizes dependency versions.
+- **JUnit Platform Launcher:** The `testRuntimeOnly("org.junit.platform:junit-platform-launcher")` line adds the JUnit Platform Launcher as a runtime dependency for running tests.
+- **Guava:** The `implementation(libs.guava)` line adds Google Guava as a dependency used by the application.
+`implementation` means this dependency is required at both compile and runtime.
+
+#### 4. Java Toolchain Block
+
+```kotlin {1-6} showLineNumbers title="Java Toolchain"
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+```
+
+The `java` block configures the Java toolchain to ensure a consistent Java version across different development environments.
+
+- **Java Version 11:** The `languageVersion.set(JavaLanguageVersion.of(11))` line specifies that Java 11 should be used for compiling and running the project.
+This helps in managing projects that need to be built with a specific Java version, regardless of the JDK installed on the developer's machine.
+
+#### 5. Application Block
+
+```kotlin {1-4} showLineNumbers title="Application"
+application {
+    // Define the main class for the application.
+    mainClass.set("hello.world.project.App")
+}
+```
+
+The `application` block configures the application plugin.
+
+- **Main Class:** The `mainClass.set("hello.world.project.App")` line defines the entry point of the application.
+When the application is run, the specified class (`hello.world.project.App`) will be used as the main class.
+
+#### 6. Custom Test Task Configuration
+
+```kotlin {1-4} showLineNumbers title="Test Task Configuration"
+tasks.named<Test>("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+```
+
+This block customizes the behavior of the `test` task.
+
+- **JUnit Platform:** The `useJUnitPlatform()` method configures the `test` task to use the [JUnit](https://junit.org/junit5/ "Link to the website of JUnit") Platform for discovering and running tests.
+This is necessary for running JUnit Jupiter tests.
+
+</p>
+</details>
 
 ## Initializing the Project
 
@@ -220,52 +322,6 @@ BUILD SUCCESSFUL in 372ms
 
 </TabItem>
 </Tabs>
-
-<details>
-<summary>Here a better name</summary>
-<p>
-
-```kotlin showLineNumbers title="build.gradle.kts"
-plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    application
-}
-
-repositories {
-    // Use Maven Central for resolving dependencies.
-    mavenCentral()
-}
-
-dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
-
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // This dependency is used by the application.
-    implementation(libs.guava)
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
-}
-
-application {
-    // Define the main class for the application.
-    mainClass.set("hello.world.project.App")
-}
-
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
-```
-
-</p>
-</details>
 
 ## Running the Application
 

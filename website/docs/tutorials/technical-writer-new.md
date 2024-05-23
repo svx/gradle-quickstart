@@ -99,6 +99,9 @@ Explain the files below.
 
 ### Settings file
 
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.
+It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
+
 ```kotlin showLineNumbers title="settings.gradle.kts"
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
