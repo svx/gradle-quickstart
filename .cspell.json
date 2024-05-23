@@ -21,6 +21,7 @@
     // words - list of words to be always considered correct
     "words": [
         "acemcorp",
+        "acff",
         "Acmecorp",
         "Asana",
         "Creativecommons",
@@ -28,26 +29,26 @@
         "datetime",
         "Datetime",
         "decompile",
+        "direnv",
         "gsutil",
         "Guillotina",
         "hadolint",
+        "ingressclasses",
+        "kubernetesingress",
+        "lefthook",
         "linkcheck",
         "myworkspace",
         "openapi",
+        "Proxying",
+        "RABA",
         "Saldana",
         "signup",
         "sublicensable",
+        "subproject",
+        "subprojects",
         "sunsetting",
         "traefik",
-        "Traefik",
-        "kubernetesingress",
-        "acff",
-        "ingressclasses",
-        "RABA",
-        "Proxying",
-        "direnv",
-        "lefthook"
-
+        "Traefik"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
