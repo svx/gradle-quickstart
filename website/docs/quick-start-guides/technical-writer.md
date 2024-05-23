@@ -50,7 +50,7 @@ git clone https://github.com/svx/gradle-hello-world.git
 
 2. Change into the `technical-writer-project` inside the cloned repository.
 
-```shell title="CLI"
+```shell title="Command line"
 cd technical-writer-project
 ```
 
@@ -458,14 +458,14 @@ Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapp
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 gradle wrapper
 ```
 
 </TabItem>
 <TabItem value="Output">
 
-```shell title="Output"
+```shell title="Result"
 BUILD SUCCESSFUL in 500ms
 1 actionable task: 1 executed
 ```
@@ -480,7 +480,7 @@ Use the `./gradlew build` command to build the project using [Gradle Wrapper](..
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 ./gradlew build
 ```
 
@@ -502,7 +502,7 @@ Use `./gradlew run` run the application.
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 ./gradlew run
 ```
 
@@ -529,14 +529,14 @@ This task will use the `GreetingPlugin` to create files in your build directory 
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 ./gradlew hello
 ```
 
 </TabItem>
 <TabItem value="Output">
 
-```shell title="CLI Output"
+```shell title="Output"
 BUILD SUCCESSFUL in 327ms
 1 actionable task: 1 executed
 ```
@@ -549,7 +549,7 @@ Both files contain the sentence "Hi from Gradle!".
 
 Use `pr` to check the content of both files at the same time.
 
-```shell title="CLI"
+```shell title="Command line"
 pr -m -t app/build/a.txt app/build/b.txt
 ```
 

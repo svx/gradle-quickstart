@@ -41,13 +41,13 @@ Make sure you meet the following prerequisites:
 
 1. Open your terminal or command prompt and clone the GitHub repository.
 
-```shell title="CLI"
+```shell title="Command line"
 git clone https://github.com/svx/gradle-hello-world.git
 ```
 
 2. Navigate to the `hello-world-project` directory inside the cloned repository.
 
-```shell title="CLI"
+```shell title="Command line"
 cd hello-world-project
 ```
 
@@ -144,7 +144,7 @@ This means there should be a directory named app under the root project director
 
 ```kotlin showLineNumbers title="build.gradle.kts"
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
+    // Apply the application plugin to add support for building a Command line application in Java.
     application
 }
 
@@ -288,14 +288,14 @@ Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapp
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 gradle wrapper
 ```
 
 </TabItem>
 <TabItem value="Output">
 
-```shell title="Output"
+```shell title="Result"
 BUILD SUCCESSFUL in 500ms
 1 actionable task: 1 executed
 ```
@@ -310,7 +310,7 @@ Use the `./gradlew build` command to build the project using [Gradle Wrapper](..
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 ./gradlew build
 ```
 
@@ -332,7 +332,7 @@ Use `./gradlew run` run the application.
 <Tabs>
 <TabItem value="Command">
 
-```shell title="CLI"
+```shell title="Command line"
 ./gradlew run
 ```
 
