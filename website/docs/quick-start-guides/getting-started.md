@@ -2,7 +2,7 @@
 description: Tutorial/Guide outline.
 id: quick-getting-started
 sidebar_position: 1
-sidebar_label: Getting started
+sidebar_label: Hello World
 sidebar_class_name: green
 tags:
   - Tutorial
@@ -13,7 +13,7 @@ import ContentRef from '@site/src/components/ContentRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting started
+# Introduction
 
 This guide will walk you through setting up a  "Hello World" Java application using Gradle.
 
@@ -80,7 +80,7 @@ cd hello-world-project
 
 ### Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.<br />
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
 It defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ```kotlin showLineNumbers title="settings.gradle.kts"

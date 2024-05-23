@@ -1,7 +1,7 @@
 ---
 description: Tutorial/Guide outline.
 id: quick-technical-writer-new
-sidebar_position: 3
+sidebar_position: 2
 sidebar_label: Technical Writer
 tags:
   - Tutorial
@@ -18,41 +18,33 @@ Update build file
 Add command and output tabs to be consistent
 ::::
 
-# Technical Writer
+# Introduction
+
+This guide will walk you through setting up a  "Technical Writer" Java application using Gradle.
+
+You will learn how to create and use custom tasks using a Gradle Plugin to create text files with a specified message, in the build directory (`app/build`) of the application.
 
 In this tutorial, you will:
 
 - Clone an example project from GitHub.
+- Learn about Gradle’s project and file structure.
 - Initialize a new Gradle project.
-- Build the project.
-- Learn about Gradle’s project structure.
-- Explore Gradle files and build scripts.
-
-This tutorial will guide you through setting up a  "Technical Writer" Java application using Gradle.
-
-This build file sets up a Java application project with a custom plugin that generates text files with a specified message, demonstrating how to extend Gradle's functionality through custom plugins and tasks.
-
-You will learn how to create and use custom tasks using a Gradle Plugin to create test files in the build directory (`app/build`) of the application.
-
-:::warning
-Enhance above.
-
-Add line tat that this is for imidate audience if you are new check the hello world first.
-
-:::
+- Activate the Gradle Wrapper
+- Build and run the project.
+- Run a custom task and review the result.
 
 :::info
 In this tutorial, all examples are macOS based.
 :::
 
-## Prerequisites
+## Before you Begin
 
-Add aline that the user should check fundamentals to / if not used to Gradle basics.
+Make sure you meet the following prerequisites:
 
-
-- [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") installed (version 8 or later).
-- Gradle [installed on your system](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs").
-- [Git](https://git-scm.com/ "Link to the website of Git")
+- You read the [Gradle Fundamentals](../fundamentals.md "Link to Fundamentals page") page.
+- [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit "Link to JDK page on Wikipedia") is installed (version 8 or later).
+- [Gradle](https://docs.gradle.org/current/userguide/installation.html#installation "Link to Gradle installation docs") is installed on your system.
+- [Git](https://git-scm.com/ "Link to the website of Git") is installed.
 
 ## Preparing the Project
 
@@ -95,13 +87,9 @@ cd technical-writer-project
 
 ## Understanding the Project Files
 
-:::warning
-Explain the files below.
-:::
-
 ### Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.<br />
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
 It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ```kotlin showLineNumbers title="settings.gradle.kts"
@@ -472,26 +460,29 @@ Defines a custom task class named `Greeting`.
 </p>
 </details>
 
-## Initializing the Project
+## Activating the Gradle Wrapper
 
-:::warning
-Add tab with output
-:::
+Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
-Use `gradle init` to generate a new Gradle project using the [Gradle Kotlin DSL](https://docs.gradle.org/current/dsl/ "Link to the Gradle Build Language Reference") (Domain Specific Language) a Kotlin-based language:
+<Tabs>
+<TabItem value="Command">
 
 ```shell title="CLI"
-gradle init --type java-application --dsl kotlin
+gradle wrapper
 ```
 
-<ContentRef url="https://docs.gradle.org/current/userguide/build_init_plugin.html">Learn more about the Build Init Plugin</ContentRef>
+</TabItem>
+<TabItem value="Output">
+
+```shell title="Output"
+BUILD SUCCESSFUL in 500ms
+1 actionable task: 1 executed
+```
+
+</TabItem>
+</Tabs>
 
 ## Building the Project
-
-:::warning
-Run and adjust, this is for now just a copy.
-
-:::
 
 Use the `./gradlew build` command to build the project using [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
@@ -514,13 +505,6 @@ BUILD SUCCESSFUL in 381ms
 </Tabs>
 
 ## Running the Application
-
-:::warning
-Explain the user will first run it to see what it is doing.
-In a second step, the user will run the custom task
-
-Adjust the app that is giving a different output that hello world
-:::
 
 Use `./gradlew run` run the application.
 
@@ -545,33 +529,11 @@ BUILD SUCCESSFUL in 392ms
 </TabItem>
 </Tabs>
 
-## Tasks
+## Running the `hello` Task
 
-:::warning
-Add here now info that the user will run the custom task after a successful run of the main application.
-:::
+Use `./gradlew hello` to run the custom `hello` task.
 
-### Task Overview
-
-:::warning
-Add a link to the fundamentals page part about tasks
-:::
-
-```shell
-./gradlew tasks
-```
-
-This will show a list of all possible tasks, as mentioned in the first part, `build` is a task.
-
-![Task Overview Example](/img/gradle-tasks-example.png)
-
-:::warning
-Update screen
-:::
-
-### Running the `hello` Task
-
-Use `./gradlew hello` run the task.
+This task will use the `GreetingPlugin` to create files in your build directory (`app/build`).
 
 <Tabs>
 <TabItem value="Command">
@@ -605,5 +567,18 @@ Hi from Gradle!			    Hi from Gradle!
 ```
 
 </TabItem>
-
 </Tabs>
+
+## Summary
+
+Congratulations 🎉 !!!
+
+You've successfully created the "Technical Writer" application using Gradle and ran a custom task.
+
+The following list provides a quick summary of what you have achieved by working through this guide.
+
+- Cloned an example project from GitHub.
+- Learned about Gradle’s project and file structure.
+- Activated the Gradle Wrapper.
+- Built and ran the project.
+- Ran a custom task and reviewed the result.
