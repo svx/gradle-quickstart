@@ -98,6 +98,52 @@ rootProject.name = "technical-writer-project"
 include("app")
 ```
 
+<details>
+<summary>Breakdown and Explanation</summary>
+<p>
+
+#### 1. Plugins Block
+
+```kotlin {1-4} showLineNumbers title="Plugins"
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+```
+
+The `plugins` block in the settings file is used to apply plugins that are necessary for configuring the build environment before any project-specific configurations are applied.
+
+- **foojay-resolver Plugin:** The org.gradle.toolchains.foojay-resolver-convention plugin is used to facilitate the automatic download and management of JDKs through Foojay (a community-driven Java version manager).
+This plugin ensures that the appropriate JDK version is available for the build, streamlining the setup process.
+- **Version:** The version `0.7.0` specifies the exact version of the foojay-resolver plugin to use.
+
+#### 2. Root Project Name
+
+```kotlin {1} showLineNumbers title="Root Project Name"
+rootProject.name = "technical-writer-project"
+```
+
+The `rootProject.name` property sets the name of the root project.
+This is useful for multi-project builds where you have a main project (root project) and potentially several subprojects.
+
+- **Name:** In this case, the root project is named `technical-writer-project`.
+This name will be used as the identifier for the main project directory and in build outputs.
+
+#### 3. Include Subprojects
+
+```kotlin {1} showLineNumbers title="Include Subprojects"
+include("app")
+```
+
+The `include` method is used to specify the subprojects that are part of the build.
+Each subproject corresponds to a directory under the root project directory.
+
+- **Subproject `app`:** The settings file includes a subproject named `app`.
+This means there should be a directory named app under the root project directory (`technical-writer-project/app`), and this directory will contain its own `build.gradle.kts` file for specific build configurations.
+
+</p>
+</details>
+
 ### Build File
 
 ```kotlin showLineNumbers title="build.gradle.kts"
