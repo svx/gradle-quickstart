@@ -103,11 +103,15 @@ plugins {
 }
 ```
 
+<!-- markdownlint-disable MD013 -->
+
 The `plugins` block in the settings file is used to apply plugins that are necessary for configuring the build environment before any project-specific configurations are applied.
 
 - **foojay-resolver Plugin:** The `org.gradle.toolchains.foojay-resolver-convention` plugin is used to facilitate the automatic download and management of JDKs through [Foojay](https://github.com/gradle/foojay-toolchains "Link to the GitHub repository of the Plugin") (a community-driven Java version manager).
 This plugin ensures that the appropriate JDK version is available for the build, streamlining the setup process.
 - **Version:** The version `0.7.0` specifies the exact version of the `foojay-resolver` plugin to use.
+
+<!-- markdownlint-enable MD013 -->
 
 #### 2. Root Project Name
 

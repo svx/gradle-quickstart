@@ -14,7 +14,8 @@ Understanding the key concepts, you'll be well-equipped to follow the guides and
 
 ## Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"),
+is used to configure the Gradle build at a high level.<br />
 It defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ## Build File

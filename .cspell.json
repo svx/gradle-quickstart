@@ -30,6 +30,8 @@
         "Datetime",
         "decompile",
         "direnv",
+        "foojay",
+        "gradlew",
         "gsutil",
         "Guillotina",
         "hadolint",
