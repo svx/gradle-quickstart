@@ -62,6 +62,9 @@ const config = {
     ],
   ],
 
+  plugins: [[require.resolve("docusaurus-lunr-search"), {
+    enableHighlight: true
+  }]],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -82,7 +85,7 @@ const config = {
           //},
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/svx/gradle-hello-world',
             //label: 'GitHub',
             position: 'right',
             className: 'header-github-link',
