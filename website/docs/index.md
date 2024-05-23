@@ -20,7 +20,7 @@ Our quick-start guides cover the essentials you need to get started with Gradle,
 
 If you're new to Gradle, our beginner guides will introduce you to the basics:
 
-- [Creating Your First Gradle Project](./quick-start-guides/getting-started.md "Link to Getting Started Guide"): Step-by-step instructions to compile example code, and run your first build.
+- [Creating Your First Gradle Project](./quick-start-guides/getting-started.md "Link to Getting Started Guide"): Step-by-step instructions to compile example code, build and run your first application.
 
 ### For Intermediate Users
 
