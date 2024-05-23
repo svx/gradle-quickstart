@@ -56,13 +56,13 @@ Add aline that the user should check fundamentals to / if not used to Gradle bas
 
 ## Preparing the Project
 
-Open your terminal or command prompt and clone the GitHub repository:
+Open your terminal or command prompt and clone the GitHub repository.
 
 ```shell
 git clone https://github.com/svx/gradle-hello-world.git
 ```
 
-Change into the *technical-writer-project*:
+Change into the `technical-writer-project` inside the cloned repository.
 
 ```shell title="CLI"
 cd technical-writer-project

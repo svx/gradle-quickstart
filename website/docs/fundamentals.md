@@ -30,7 +30,8 @@ It specifies plugins, dependencies, repositories, and custom tasks.
 
 ## Gradle Wrapper
 
-The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project, ensuring consistency and reliability across different environments and team members.<br />
+The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project.
+Ensuring consistency and reliability across different environments and team members.<br />
 This means that anyone cloning the repository can build the project without needing to have Gradle pre-installed, as the Wrapper will download and use the correct Gradle version automatically.
 
 <h3>Key Benefits of the Gradle Wrapper</h3>
@@ -48,9 +49,25 @@ When you generate the Gradle Wrapper, several files are added to your project:
 - **gradle/wrapper/gradle-wrapper.jar:** A JAR file containing the Wrapper's code.
 - **gradle/wrapper/gradle-wrapper.properties:** A properties file specifying the Gradle version and distribution URL.
 
-:::info Batteries included
-All [tutorials](./category/tutorials/ "Link to the tutorial overview page") projects are already configured to use a Wrapper, you do not have to generate one.
-:::
+Use `gradle wrapper` to initialize the Wrapper.
+
+<Tabs>
+<TabItem value="Command">
+
+```shell title="CLI"
+gradle wrapper
+```
+
+</TabItem>
+<TabItem value="Output">
+
+```shell title="Output"
+BUILD SUCCESSFUL in 500ms
+1 actionable task: 1 executed
+```
+
+</TabItem>
+</Tabs>
 
 <ContentRef url="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Learn more about the Gradle Wrapper</ContentRef>
 

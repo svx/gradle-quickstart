@@ -21,7 +21,7 @@ You will:
 
 - Clone an example project from GitHub.
 - Learn about Gradle’s project and file structure.
-- Initialize the example Gradle project.
+- Activate the Gradle Wrapper.
 - Build and run the project.
 
 :::info
@@ -45,7 +45,7 @@ Make sure you meet the following prerequisites:
 git clone https://github.com/svx/gradle-hello-world.git
 ```
 
-2. Navigate to the `hello-world-project` directory.
+2. Navigate to the `hello-world-project` directory inside the cloned repository.
 
 ```shell title="CLI"
 cd hello-world-project
@@ -283,19 +283,27 @@ This is necessary for running JUnit Jupiter tests.
 </p>
 </details>
 
-## Initializing the Project
+## Activating the Gradle Wrapper
 
-:::warning
-Add tab with output
-:::
+Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
-Use `gradle init` to generate a new Gradle project using the [Gradle Kotlin DSL](https://docs.gradle.org/current/dsl/ "Link to the Gradle Build Language Reference") (Domain Specific Language) a Kotlin-based language:
+<Tabs>
+<TabItem value="Command">
 
 ```shell title="CLI"
-gradle init --type java-application --dsl kotlin
+gradle wrapper
 ```
 
-<ContentRef url="https://docs.gradle.org/current/userguide/build_init_plugin.html">Learn more about the Build Init Plugin</ContentRef>
+</TabItem>
+<TabItem value="Output">
+
+```shell title="Output"
+BUILD SUCCESSFUL in 500ms
+1 actionable task: 1 executed
+```
+
+</TabItem>
+</Tabs>
 
 ## Building the Project
 
@@ -344,9 +352,15 @@ BUILD SUCCESSFUL in 373ms
 </TabItem>
 </Tabs>
 
-## Conclusion
+## Summary
 
-Adjust below
+Congratulations 🎉 !!!
 
-Congratulations! You've successfully created a  "Hello World" application using Gradle.
-You will learn the basics about the project root directory setup, build and settings files.
+You've successfully created a "Hello World" application using Gradle.
+
+The following list provides a quick summary of what you have achieved by working through this guide.
+
+- Cloned an example project from GitHub.
+- Learned about Gradle’s project and file structure.
+- Activated the Gradle Wrapper.
+- Built and ran the project.
