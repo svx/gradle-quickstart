@@ -1,6 +1,6 @@
 ---
 description: Tutorial/Guide outline.
-id: getting-started
+id: quick-getting-started
 sidebar_position: 1
 sidebar_label: Getting started
 sidebar_class_name: green
@@ -360,4 +360,3 @@ Adjust below
 
 Congratulations! You've successfully created a  "Hello World" application using Gradle.
 You will learn the basics about the project root directory setup, build and settings files.
-

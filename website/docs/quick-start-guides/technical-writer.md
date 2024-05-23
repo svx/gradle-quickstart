@@ -1,6 +1,6 @@
 ---
 description: Tutorial/Guide outline.
-id: technical-writer-new
+id: quick-technical-writer-new
 sidebar_position: 3
 sidebar_label: Technical Writer
 tags:
