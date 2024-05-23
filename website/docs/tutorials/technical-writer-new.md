@@ -8,6 +8,10 @@ tags:
   - Intermediate
 ---
 
+import ContentRef from '@site/src/components/ContentRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::info
 In this tutorial, all examples are macOS based.
 :::
@@ -21,6 +25,8 @@ Add command and output tabs to be consistent
 # Technical Writer
 
 This tutorial will guide you through setting up a  "Technical Writer" Java application using Gradle.
+
+This build file sets up a Java application project with a custom plugin that generates text files with a specified message, demonstrating how to extend Gradle's functionality through custom plugins and tasks.
 
 You will learn how to create and use custom tasks using a Gradle Plugin to create test files in the build directory (`app/build`) of the application.
 
@@ -99,7 +105,7 @@ Explain the files below.
 
 ### Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.<br />
 It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ```kotlin showLineNumbers title="settings.gradle.kts"
@@ -157,7 +163,6 @@ This means there should be a directory named app under the root project director
 
 </p>
 </details>
-
 
 ### Build File
 
@@ -245,7 +250,7 @@ open class GreetingPluginExtension(project: Project) {
     val outputFiles: ConfigurableFileCollection = project.files()
 }
 
-// Run the task and create the files *a.txt and b.txt)
+// Define custom task and task action.
 open class Greeting : DefaultTask() {
 
     @get:Input
@@ -264,51 +269,277 @@ open class Greeting : DefaultTask() {
 }
 ```
 
+<details>
+<summary>Breakdown and Explanation</summary>
+<p>
+
+#### 1. Applying the Custom Plugin
+
+```kotlin {1-2} showLineNumbers title="Applying the Custom Plugin"
+// Apply the custom Plugin which is defined in the class GreetingPlugin below.
+apply<GreetingPlugin>()
+```
+
+This line applies a custom plugin defined within the build file itself.
+The plugin class `GreetingPlugin` is defined later in the file.
+
+#### 2. Helper Function
+
+```kotlin {1-2} showLineNumbers title="Helper Function"
+// Function to create the files a.txt and b.txt in the build directory.
+fun buildFile(path: String) = layout.buildDirectory.file(path)
+```
+
+This function generates file paths within the build directory. It will be used to specify the output files for the custom task.
+
+#### 3. Plugins Block
+
+```kotlin {1-4} showLineNumbers title="Plugins"
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    application
+}
+```
+
+The `plugins` block is used to apply plugins to the project.
+
+- **Application Plugin:** The `application` plugin adds tasks for building and running a Java command-line application.
+It simplifies packaging and running the application by providing a convenient way to define the main class and build the executable.
+
+#### 4. Repositories Block
+
+```kotlin {1-4} showLineNumbers title="Repository"
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+```
+
+The `repositories` block specifies where Gradle should look for dependencies.
+
+- **Maven Central:** The `mavenCentral()` method adds the Maven Central repository, which is a widely used repository for open-source libraries.
+
+#### 5. Dependencies Block
+
+```kotlin {1-9} showLineNumbers title="Dependencies"
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation(libs.junit.jupiter)
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // This dependency is used by the application.
+    implementation(libs.guava)
+}
+```
+
+The `dependencies` block defines the external libraries that the project depends on.
+
+- **JUnit Jupiter:** The `testImplementation(libs.junit.jupiter)` line adds JUnit Jupiter (the new version of JUnit) as a dependency for writing and running tests.
+`libs` is a reference to a version catalog, which centralizes dependency versions.
+- **JUnit Platform Launcher:** The `testRuntimeOnly("org.junit.platform:junit-platform-launcher")` line adds the JUnit Platform Launcher as a runtime dependency for running tests.
+- **Guava:** The `implementation(libs.guava)` line adds Google Guava as a dependency used by the application.
+`implementation` means this dependency is required at both compile and runtime.
+
+#### 6. Java Toolchain Block
+
+```kotlin {1-6} showLineNumbers title="Java Toolchain"
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+```
+
+The `java` block configures the Java toolchain to ensure a consistent Java version across different development environments.
+
+- **Java Version 11:** The `languageVersion.set(JavaLanguageVersion.of(11))` line specifies that Java 11 should be used for compiling and running the project.
+This helps in managing projects that need to be built with a specific Java version, regardless of the JDK installed on the developer's machine.
+
+#### 7. Application Block
+
+```kotlin {1-4} showLineNumbers title="Application"
+application {
+    // Define the main class for the application.
+    mainClass.set("technical.writer.project.App")
+}
+```
+
+The `application` block configures the application plugin.
+
+- **Main Class:** The `mainClass.set("technical.writer.project.App")` line defines the entry point of the application.
+When the application is run, the specified class (`technical.writer.project.App`) will be used as the main class.
+
+#### 8. Custom Test Task Configuration
+
+```kotlin {1-4} showLineNumbers title="Test Task Configuration"
+tasks.named<Test>("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+```
+
+This block customizes the behavior of the `test` task.
+
+- **JUnit Platform:** The `useJUnitPlatform()` method configures the `test` task to use the [JUnit](https://junit.org/junit5/ "Link to the website of JUnit") Platform for discovering and running tests.
+This is necessary for running JUnit Jupiter tests.
+
+#### 9. Configure the Custom Plugin Extension
+
+```kotlin {1-6} showLineNumbers title="Configure the Custom Plugin Extension"
+configure<GreetingPluginExtension> {
+    message.set("Hi from Gradle")
+    outputFiles.from(
+        buildFile("a.txt"),
+        buildFile("b.txt"))
+}
+```
+
+Configures the custom plugin's extension to set a message and specify the output files.
+
+#### 10. Custom Plugin Definition
+
+```kotlin {1-22} showLineNumbers title="GreetingPlugin Class"
+// Custom Plugin
+class GreetingPlugin : Plugin<Project> {
+
+    override fun apply(project: Project): Unit = project.run {
+
+        // Add the 'greeting' extension object
+        val greeting = extensions.create(
+            "greeting",
+            GreetingPluginExtension::class,
+            project)
+
+        // Add a task that uses the configuration
+        tasks {
+            register("hello", Greeting::class) {
+                group = "Greeting"
+                description = "Generates greeting files."
+                message.set(greeting.message)
+                outputFiles.setFrom(greeting.outputFiles)
+            }
+        }
+    }
+}
+```
+
+Defines a custom plugin named `GreetingPlugin`.
+
+- **Extension:** Adds an extension named `greeting` for configuring the plugin.
+- **Task Registration:** Registers a task named `hello` that generates greeting files based on the extension's configuration.
+
+#### 11. GreetingPluginExtension Class
+
+```kotlin {1-7} showLineNumbers title="GreetingPluginExtension Class"
+// Open for extension
+open class GreetingPluginExtension(project: Project) {
+
+    val message = project.objects.property<String>()
+
+    val outputFiles: ConfigurableFileCollection = project.files()
+}
+```
+
+Defines an extension class for the custom plugin.
+
+- **Properties:** Includes a `message` property and an `outputFiles` property to hold the list of output files.
+
+#### 12. Greeting Task Class
+
+```kotlin {1-17} showLineNumbers title="Greeting Task Class"
+// Define custom task and task action.
+open class Greeting : DefaultTask() {
+
+    @get:Input
+    val message = project.objects.property<String>()
+
+    @get:OutputFiles
+    val outputFiles: ConfigurableFileCollection = project.files()
+
+    @TaskAction
+    fun printMessage() {
+        val message = message.get()
+        val outputFiles = outputFiles.files
+        logger.info("Writing message '$message' to files $outputFiles")
+        outputFiles.forEach { it.writeText(message) }
+    }
+}
+```
+
+Defines a custom task class named `Greeting`.
+
+- **Properties:** Includes `message` and `outputFiles` properties for the task inputs and outputs.
+- **Task Action:** The `printMessage` method writes the message to the specified output files.
+
+</p>
+</details>
+
 ## Building the Project
 
-In your terminal, change into the first project and run the following command to build the project by using the Gradle Wrapper included into this project.
+:::warning
+Run and adjust, this is for now just a copy.
 
-Run the following command to build the project by using the [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
+:::
+
+Use the `./gradlew build` command to build the project using [Gradle Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
+
+<Tabs>
+<TabItem value="Command">
 
 ```shell title="CLI"
 ./gradlew build
 ```
 
-:::warning
-Explain that "build: is a task, explain that below and add a link to below
+</TabItem>
+<TabItem value="Output">
 
-Add output example, maybe in a tab.
-:::
+```shell title="Result"
+BUILD SUCCESSFUL in 381ms
+7 actionable tasks: 7 up-to-date
+```
+
+</TabItem>
+</Tabs>
 
 ## Running the Application
 
-To run the application, use the following command:
+:::warning
+Explain the user will first run it to see what it is doing.
+In a second step, the user will run the custom task
 
-```shell
+Adjust the app that is giving a different output that hello world
+:::
+
+Use `./gradlew run` run the application.
+
+<Tabs>
+<TabItem value="Command">
+
+```shell title="CLI"
 ./gradlew run
 ```
 
-You should see the output:
+</TabItem>
+<TabItem value="Output">
 
-```shell
-> Task :run
-Hello, World!
+```shell title="Result"
+> Task :app:run
+You are awesome!
+
+BUILD SUCCESSFUL in 392ms
+2 actionable tasks: 1 executed, 1 up-to-date
 ```
 
-Congratulations!
-
-
-In the second part of this guide/tutorial, you will learn about Gradle tasks and plugins.
-
-:::warning
-Should that be called the second part?
-
-Should I add the file customization to the beginning?
-:::
+</TabItem>
+</Tabs>
 
 ## Tasks
 
-In your terminal:
+:::warning
+Add here now info that the user will run the custom task after a successful run of the main application.
+:::
 
 ### Task Overview
 
@@ -328,31 +559,41 @@ This will show a list of all possible tasks, as mentioned in the first part, `bu
 Update screen
 :::
 
-### Running the hello Task
+### Running the `hello` Task
 
-:::warning
-Enhance above heading
-:::
+Use `./gradlew hello` run the task.
 
-In your terminal:
+<Tabs>
+<TabItem value="Command">
 
-```shell
+```shell title="CLI"
 ./gradlew hello
 ```
 
-This will run the **hello** task, it will create two files (Check that and add screen which contain "Hello Word".
+</TabItem>
+<TabItem value="Output">
 
-```shell title="CLI"
-ls app/build
-a.txt
-b.txt
+```shell title="CLI Output"
+BUILD SUCCESSFUL in 327ms
+1 actionable task: 1 executed
 ```
 
-## Conclusion
+</TabItem>
+<TabItem value="Result">
 
-:::warning
-Adjust below
-:::
+The task created two files `a.txt` and `b.txt` in the build directory of the project (`app/build`).<br />
+Both files contain the sentence "Hi from Gradle!".
 
-Congratulations! You've successfully created a  "Hello World" application using Gradle. You've learned how to set up a Gradle project, customize the *build.gradle* file, add dependencies, and run your application.
-Gradle is a powerful tool with many features for managing and automating your builds, so continue exploring its capabilities to make the most of it.
+Use `pr` to check the content of both files at the same time.
+
+```shell title="CLI"
+pr -m -t app/build/a.txt app/build/b.txt
+```
+
+```shell title="Output"
+Hi from Gradle!			    Hi from Gradle!
+```
+
+</TabItem>
+
+</Tabs>

@@ -41,7 +41,7 @@ tasks.named<Test>("test") {
 
 configure<GreetingPluginExtension> {
 
-    message.set("Hi from Gradle")
+    message.set("Hi from Gradle!")
     outputFiles.from(
         buildFile("a.txt"),
         buildFile("b.txt"))

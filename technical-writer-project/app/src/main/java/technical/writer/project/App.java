@@ -5,7 +5,7 @@ package technical.writer.project;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "You are awesome!";
     }
 
     public static void main(String[] args) {

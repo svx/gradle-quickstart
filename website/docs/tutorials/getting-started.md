@@ -325,7 +325,7 @@ BUILD SUCCESSFUL in 372ms
 
 ## Running the Application
 
-To run the application, use the following command:
+Use `./gradlew run` run the application.
 
 <Tabs>
 <TabItem value="Command">
