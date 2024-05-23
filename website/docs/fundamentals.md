@@ -10,18 +10,16 @@ import TabItem from '@theme/TabItem';
 
 # Fundamentals
 
-:::warning
-Add an intro
-:::
+Understanding the key concepts, you'll be well-equipped to follow the guides and start using Gradle effectively for your projects.
 
 ## Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for Kotlin DSL, is used to configure the Gradle build at a high level.
-It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
+The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
+It defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
 
 ## The Build File
 
-The Gradle build file, typically named `build.gradle` or `build.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), defines how the project is built.
+The Gradle build file, typically named `build.gradle` or `build.gradle.kts` for Kotlin DSL, defines how the project is built.
 It specifies plugins, dependencies, repositories, and custom tasks.
 
 ## Gradle Wrapper
@@ -91,10 +89,6 @@ To get an overview about all available tasks for a project, run `./gradlew tasks
 See the following example:
 
 ![Task Overview Example](/img/gradle-tasks-example.png)
-
-:::warning
-Update screen
-:::
 
 <ContentRef url="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Learn more about using Gradle Tasks</ContentRef>
 

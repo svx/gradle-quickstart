@@ -89,9 +89,6 @@ cd technical-writer-project
 
 ### Settings file
 
-The settings file in a Gradle project, typically named `settings.gradle` or `settings.gradle.kts` for [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html "Link to the Kotlin DSL docs"), is used to configure the Gradle build at a high level.<br />
-It usually defines the structure of the multi-project build and can include plugin configurations that need to be applied before any projects are evaluated.
-
 ```kotlin showLineNumbers title="settings.gradle.kts"
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
@@ -128,7 +125,7 @@ rootProject.name = "technical-writer-project"
 ```
 
 The `rootProject.name` property sets the name of the root project.
-This is useful for multi-project builds where you have a main project (root project) and potentially several subprojects.
+This is useful for multi-project builds where you have a main project (root project) and several subprojects.
 
 - **Name:** In this case, the root project is named `technical-writer-project`.
 This name will be used as the identifier for the main project directory and in build outputs.
