@@ -7,6 +7,8 @@ tags:
   - Tutorial
   - Intermediate
   - macOS
+  - Linux
+  - Unix
 ---
 
 import ContentRef from '@site/src/components/ContentRef'
@@ -29,7 +31,7 @@ In this tutorial, you will:
 - Run a custom task and review the result.
 
 :::info
-In this tutorial, all examples are macOS based.
+This quick-start guide is written for Unix-based systems.
 :::
 
 ## Before You Begin
@@ -458,7 +460,11 @@ Defines a custom task class named `Greeting`.
 
 ## Activating the Gradle Wrapper
 
-Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
+:::info Batteries Included
+The project is already initialized and includes the Gradle Wrapper files.
+:::
+
+Use `gradle wrapper` to activate the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
 <Tabs>
 <TabItem value="Command">

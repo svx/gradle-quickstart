@@ -8,6 +8,8 @@ tags:
   - Tutorial
   - Beginner
   - macOS
+  - Linux
+  - Unix
 ---
 
 import ContentRef from '@site/src/components/ContentRef'
@@ -26,7 +28,7 @@ You will:
 - Build and run the project.
 
 :::info
-In this tutorial, all examples are macOS based.
+This quick-start guide is written for Unix-based systems.
 :::
 
 ## Before You Begin
@@ -284,7 +286,11 @@ This is necessary for running JUnit Jupiter tests.
 
 ## Activating the Gradle Wrapper
 
-Use `gradle wrapper` to initialize the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
+:::info Batteries Included
+The project is already initialized and includes the Gradle Wrapper files.
+:::
+
+Use `gradle wrapper` to activate the [Wrapper](../fundamentals.md#gradle-wrapper "Link to documentation about the Gradle Wrapper").
 
 <Tabs>
 <TabItem value="Command">
@@ -363,5 +369,3 @@ The following list provides a quick summary of what you have achieved by working
 - Learned about Gradle’s project and file structure.
 - Activated the Gradle Wrapper.
 - Built and ran the project.
-
-
