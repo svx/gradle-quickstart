@@ -35,13 +35,6 @@ The Gradle Wrapper allows a Gradle project to specify which version of Gradle sh
 
 - **Portability:** Simplifies CI/CD pipelines and onboarding new developers, as they only need to have Java installed.
 
-When you generate the Gradle Wrapper, several files are added to your project:
-
-- **gradlew:** A shell script for Unix-based systems to run the Wrapper.
-- **gradlew.bat:** A batch script for Windows to run the Wrapper.
-- **gradle/wrapper/gradle-wrapper.jar:** A JAR file containing the Wrapper's code.
-- **gradle/wrapper/gradle-wrapper.properties:** A properties file specifying the Gradle version and distribution URL.
-
 Use `gradle wrapper` to initialize the Wrapper.
 
 <Tabs>
