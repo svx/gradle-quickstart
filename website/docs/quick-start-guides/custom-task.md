@@ -1,8 +1,8 @@
 ---
 description: "How to create custom tasks."
-id: quick-technical-writer-new
+id: custom-task
 sidebar_position: 2
-sidebar_label: Technical Writer
+sidebar_label: Custom Task
 tags:
   - Intermediate
   - macOS
@@ -44,16 +44,16 @@ Make sure you meet the following prerequisites:
 
 ## Preparing the Project
 
-1. Open your terminal or command prompt and clone the GitHub repository.
-
-```shell
-git clone https://github.com/svx/gradle-hello-world.git
-```
-
-2. Change into the `technical-writer-project` inside the cloned repository.
+1. Open your terminal or command prompt and clone the GitHub repository with the example project.
 
 ```shell title="Command line"
-cd technical-writer-project
+git git@github.com:svx/gradle-quickstart.git
+```
+
+2. Change into the `custom-task-project` inside the cloned repository.
+
+```shell title="Command line"
+cd custom-task-project
 ```
 
 ## Understanding the Project Structure
@@ -74,16 +74,16 @@ cd technical-writer-project
 └── settings.gradle.kts
 ```
 
-- **app/build.gradle.kts:** The main build script for your project.
-- **app/src/:** The source directory for your Java code and tests.
-- **gradle/wrapper/**: Contains the Gradle wrapper files, allowing the project to be built even if Gradle isn't installed globally.
-- **gradlew:** A shell script for Unix-based systems to run the Wrapper.
-- **gradlew.bat:** A batch script for Windows to run the Wrapper.
-- **settings.gradle.kts:** Contains project settings, like the project name.
+- `app/build.gradle.kts`: The main build script for your project.
+- `app/src/`: The source directory for your Java code and tests.
+- `gradle/wrapper/`: Contains the Gradle wrapper files, allowing the project to be built even if Gradle isn't installed globally.
+- `gradlew`: A shell script for Unix-based systems to run the Wrapper.
+- `gradlew.bat`: A batch script for Windows to run the Wrapper.
+- `settings.gradle.kts`: Contains project settings, like the project name.
 
 ## Understanding the Project Files
 
-### Settings file
+### Settings File
 
 ```kotlin showLineNumbers title="settings.gradle.kts"
 plugins {
@@ -91,7 +91,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "technical-writer-project"
+rootProject.name = "custom-task-project"
 include("app")
 ```
 
@@ -121,13 +121,13 @@ This plugin ensures that the appropriate JDK version is available for the build,
 #### 2. Root Project Name
 
 ```kotlin {1} showLineNumbers title="Root Project Name"
-rootProject.name = "technical-writer-project"
+rootProject.name = "custom-task-project"
 ```
 
 The `rootProject.name` property sets the name of the root project.
 This is useful for multi-project builds where you have a main project (root project) and several subprojects.
 
-- **Name:** In this case, the root project is named `technical-writer-project`.
+- **Name:** In this case, the root project is named `custom-task-project`.
 This name will be used as the identifier for the main project directory and in build outputs.
 
 #### 3. Include Subprojects
@@ -140,7 +140,7 @@ The `include` method is used to specify the subprojects that are part of the bui
 Each subproject corresponds to a directory under the root project directory.
 
 - **Subproject `app`:** The settings file includes a subproject named `app`.
-This means there should be a directory named app under the root project directory (`technical-writer-project/app`), and this directory will contain its own `build.gradle.kts` file for specific build configurations.
+This means there should be a directory named app under the root project directory (`custom-task-project/app`), and this directory will contain its own `build.gradle.kts` file for specific build configurations.
 
 </p>
 </details>
