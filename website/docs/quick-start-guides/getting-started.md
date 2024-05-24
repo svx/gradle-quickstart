@@ -5,7 +5,6 @@ sidebar_position: 1
 sidebar_label: Hello World
 sidebar_class_name: green
 tags:
-  - Tutorial
   - Beginner
   - macOS
   - Linux

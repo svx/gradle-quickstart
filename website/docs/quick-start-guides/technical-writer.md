@@ -4,7 +4,6 @@ id: quick-technical-writer-new
 sidebar_position: 2
 sidebar_label: Technical Writer
 tags:
-  - Tutorial
   - Intermediate
   - macOS
   - Linux
@@ -21,7 +20,7 @@ This guide will walk you through setting up a  "Technical Writer" Java applicati
 
 You will learn how to create and use custom tasks using a Gradle Plugin to create text files with a specified message, in the build directory (`app/build`) of the application.
 
-In this tutorial, you will:
+You will:
 
 - Clone an example project from GitHub.
 - Learn about Gradle’s project and file structure.
