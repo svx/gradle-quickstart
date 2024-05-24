@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 # Introduction
 
-This guide will walk you through setting up a  "Hello World" Java application using Gradle.
+This guide will walk you through setting up a Java application with the name "Hello World" using Gradle.
 
 You will:
 
@@ -44,13 +44,13 @@ Make sure you meet the following prerequisites:
 1. Open your terminal or command prompt and clone the GitHub repository with the example project.
 
 ```shell title="Command line"
-git clone git@github.com:svx/gradle-quickstart.git
+git clone https://github.com/svx/gradle-quickstart.git
 ```
 
 2. Navigate to the `hello-world-project` directory inside the cloned repository.
 
 ```shell title="Command line"
-cd hello-world-project
+cd gradle-quickstart/hello-world-project
 ```
 
 ## Understanding the Project Structure

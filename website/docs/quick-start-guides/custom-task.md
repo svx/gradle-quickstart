@@ -16,9 +16,9 @@ import TabItem from '@theme/TabItem';
 
 # Introduction
 
-This guide will walk you through setting up a  "Technical Writer" Java application using Gradle.
+This guide will walk you through setting up a Java application with the name "Custom Task" using Gradle.
 
-You will learn how to create and use custom tasks using a Gradle Plugin to create text files with a specified message, in the build directory (`app/build`) of the application.
+You will learn how to create and use a custom task using a Gradle Plugin to create text files with a specified message, in the build directory (`app/build`) of the application.
 
 You will:
 
@@ -47,13 +47,13 @@ Make sure you meet the following prerequisites:
 1. Open your terminal or command prompt and clone the GitHub repository with the example project.
 
 ```shell title="Command line"
-git git@github.com:svx/gradle-quickstart.git
+git clone https://github.com/svx/gradle-quickstart.git
 ```
 
 2. Change into the `custom-task-project` inside the cloned repository.
 
 ```shell title="Command line"
-cd custom-task-project
+cd gradle-quickstart/custom-task-project
 ```
 
 ## Understanding the Project Structure
@@ -580,7 +580,7 @@ Hi from Gradle!    Hi from Gradle!
 
 Congratulations 🎉 !!!
 
-You've successfully created the "Technical Writer" application using Gradle and ran a custom task.
+You've successfully created the "Custom Task" application using Gradle and ran a custom task.
 
 The following list provides a quick summary of what you have achieved by working through this guide.
 
