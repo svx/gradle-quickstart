@@ -25,9 +25,7 @@ It specifies plugins, dependencies, repositories, and custom tasks.
 
 ## Gradle Wrapper
 
-The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project.
-Ensuring consistency and reliability across different environments and team members.<br />
-This means that anyone cloning the repository can build the project without needing to have Gradle pre-installed, as the Wrapper will download and use the correct Gradle version automatically.
+The Gradle Wrapper allows a Gradle project to specify which version of Gradle should be used to build the project.<br />
 
 <h3>Key Benefits of the Gradle Wrapper</h3>
 
