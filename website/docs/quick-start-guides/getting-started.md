@@ -7,6 +7,7 @@ sidebar_class_name: green
 tags:
   - Tutorial
   - Beginner
+  - macOS
 ---
 
 import ContentRef from '@site/src/components/ContentRef'

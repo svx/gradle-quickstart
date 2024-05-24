@@ -6,6 +6,7 @@ sidebar_label: Technical Writer
 tags:
   - Tutorial
   - Intermediate
+  - macOS
 ---
 
 import ContentRef from '@site/src/components/ContentRef'
