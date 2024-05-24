@@ -85,7 +85,7 @@ const config = {
           //},
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/svx/gradle-hello-world',
+            href: 'https://github.com/svx/gradle-quickstart',
             //label: 'GitHub',
             position: 'right',
             className: 'header-github-link',
